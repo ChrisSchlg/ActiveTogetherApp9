@@ -18,3 +18,14 @@ button.active {
 .content-col {
     flex-direction: column;
 }
+
+@media (max-width: 768px) {
+    .content-row {
+      height: auto;
+    }
+
+    .content-col {
+      align-items: flex-start;
+    }
+  }
+  
