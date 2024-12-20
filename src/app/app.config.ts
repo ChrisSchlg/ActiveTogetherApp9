@@ -4,6 +4,8 @@ import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
 import { provideClientHydration } from '@angular/platform-browser';
 import { provideHttpClient } from '@angular/common/http';
+import { provideAnimations } from '@angular/platform-browser/animations';
+import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { StoreService } from './shared/store.service';
 import { BackendService } from './shared/backend.service';
 
@@ -13,6 +15,8 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideClientHydration(),
     provideHttpClient(),
+    provideAnimations(),
+    {provide: MAT_DATE_LOCALE, useValue: 'de-AT'},
     StoreService,
     BackendService]
 };

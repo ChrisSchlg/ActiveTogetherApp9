@@ -1,11 +1,42 @@
-<form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
-    <h2>Zum Kurs anmelden!</h2>
-    <input placeholder="Name" type="input" formControlName="name"><br />
-    <input placeholder="Geburtsdatum" type="date" formControlName="birthdate"><br />
-    <select formControlName="courseId">
-        <option value="" disabled>Bitte auswählen</option>
-        <option *ngFor="let course of storeService.courses" [ngValue]="course.id">{{course.name}}, {{course.instructor}}</option>
-    </select>
-
-    <button type="submit">Erfassen</button>
-</form>
+<mat-card appearance="outlined" class="form-card">
+    <mat-card-content>
+        <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+            <h2>Zum Kurs anmelden!</h2>
+            <mat-form-field class="name-input standard-input">
+                <mat-label>Name</mat-label>
+                <input type="text" matInput [formControl]="nameFormControl" [errorStateMatcher]="matcher">
+                @if (nameFormControl.hasError('required')) {
+                  <mat-error>Name is <strong>required</strong></mat-error>
+                }
+            </mat-form-field>
+            <br />
+        
+            <mat-form-field class="date-select standard-input">
+                <mat-label>Geburtsdatum</mat-label>
+                <input matInput [matDatepicker]="picker" [formControl]="dateFormControl" [errorStateMatcher]="matcher">
+                <mat-hint>/DD/MM/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+                @if (dateFormControl.hasError('required')) {
+                    <mat-error>Geburtsdatum is <strong>required</strong></mat-error>
+                }
+            </mat-form-field>
+            <br />
+        
+            <mat-form-field class="course-menu standard-input">
+                <mat-label>Bitte auswählen</mat-label>
+                <mat-select>
+                  @for (course of storeService.courses; track course) {
+                    <mat-option [value]="course.id">{{course.name}}</mat-option>
+                  }
+                </mat-select>
+            </mat-form-field>
+            <br />
+        
+            <mat-checkbox class="newsletter-check standard-input">Anmelden für Newsletter</mat-checkbox>
+            <br />
+        
+            <button mat-flat-button type="submit" class="standard-button">Erfassen</button>
+        </form>  
+    </mat-card-content>  
+</mat-card> 
