@@ -1,46 +1,50 @@
-<table>
-    <thead>
-        <tr>
-            <th>Kurs</th>
-            <th>Veranstaltungsort</th>
-            <th>Adresse des Veranstaltungsortes</th>
-            <th>Öffentlich erreichbar?</th>
-            <th>Kursleiter</th>
-            <th>Alle Termine</th>
-          </tr>
-    </thead>
-      <tbody>
-        <tr *ngFor="let course of storeService.courses">
-            <td>{{course.name}}</td>
-            <td>{{course.eventLocation.name}}</td>
-            <td>{{course.eventLocation.address}}</td>
-            <td>{{course.eventLocation.venueByPublicTansport == true ? "Ja" : "Nein"}}</td>
-            <td>{{course.instructor}}</td>
-            <td>
-                <ul>
-                    <li *ngFor="let date of course.dates">
-                        <span>{{date.begin | date:"MMM dd, yyyy 'um' hh:mm a" }}</span> - <span>{{date.end | date:"MMM dd, yyyy 'um' hh:mm a"}}</span>
-                    </li>
-                </ul>
-            </td>
-        </tr>
-      </tbody>
-</table>
+<div class="container-fluid text-center">
+  <div class="row">
+    <div class="col-1"></div>
+    <div class="col-10 text-start">
+      <div class="row header">
+        <div class="col">Kurs</div>
+        <div class="col">Veranstaltungsort</div>
+        <div class="col">Adresse des Veranstaltungsortes</div>
+        <div class="col">Öffentlich erreichbar?</div>
+        <div class="col">Kursleiter</div>
+        <div class="col-3">Alle Termine</div>
+      </div>
+      <div class="row" *ngFor="let course of storeService.courses">
+        <div class="col">{{course.name}}</div>
+        <div class="col">{{course.eventLocation.name}}</div>
+        <div class="col">{{course.eventLocation.address}}</div>
+        <div class="col">{{course.eventLocation.venueByPublicTansport == true ? "Ja" : "Nein"}}</div>
+        <div class="col">{{course.instructor}}</div>
+        <div class="col-3">
+          <div class="row" *ngFor="let date of course.dates">
+            <div class="col"><span>{{date.begin | date:"MMM dd, yyyy 'um' hh:mm a" }}</span> - <span>{{date.end | date:"MMM dd, yyyy 'um' hh:mm a"}}</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-1"></div>
+  </div>
+</div>
+<br>
 
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Geburtsdatum</th>
-            <th>Kurs</th>
-          </tr>
-    </thead>
-      <tbody>
-        <tr *ngFor="let registration of storeService.registrations">
-            <td>{{registration.name}}</td>
-            <td>{{registration.birthdate}}</td>
-            <td>{{registration.course.name}}</td>
-        </tr>
-      </tbody>
-</table>
+<div class="container-fluid text-center">
+  <div class="row">
+    <div class="col-1"></div>
+    <div class="col-10">
+      <div class="row header">
+        <div class="col">Name</div>
+        <div class="col">Geburtsdatum</div>
+        <div class="col">Kurs</div>
+      </div>
+      <div class="row" *ngFor="let registration of storeService.registrations">
+        <div class="col">{{registration.name}}</div>
+        <div class="col">{{registration.birthdate}}</div>
+        <div class="col">{{registration.course.name}}</div>
+      </div>
+    </div>
+    <div class="col-1"></div>
+  </div>
+</div>
+
 <button [ngClass]="page == storeService.currentPage ? 'active' : ''" (click)="selectPage(page)" type="button" *ngFor="let page of returnAllPages()">{{page}}</button>

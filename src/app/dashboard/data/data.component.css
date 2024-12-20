@@ -1,3 +1,7 @@
 button.active {
     background-color: orange;
 }
+
+.header {
+    font-weight: bold;
+}
