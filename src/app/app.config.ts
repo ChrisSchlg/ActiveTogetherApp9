@@ -8,6 +8,7 @@ import { provideAnimations } from '@angular/platform-browser/animations';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { StoreService } from './shared/store.service';
 import { BackendService } from './shared/backend.service';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -18,5 +19,5 @@ export const appConfig: ApplicationConfig = {
     provideAnimations(),
     {provide: MAT_DATE_LOCALE, useValue: 'de-AT'},
     StoreService,
-    BackendService]
+    BackendService, provideAnimationsAsync()]
 };
