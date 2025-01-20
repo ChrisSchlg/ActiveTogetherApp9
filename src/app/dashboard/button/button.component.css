@@ -1,0 +1,8 @@
+.container-fluid, .col-md-10 {
+    padding: 0;
+}
+
+.standard-button {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

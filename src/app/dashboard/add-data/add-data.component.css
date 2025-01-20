@@ -1,10 +1,14 @@
 .form-card {
-    margin: 20px;
-    width: 20%;
+    margin: 0 0 20px 0;
+    width: 30%;
     min-width: 300px;
 }
 
 .standard-input {
-    width: 50%;
+    width: 80%;
     min-width: 200px;
+}
+
+.container-fluid, .col-md-10 {
+    padding: 0;
 }
