@@ -7,3 +7,19 @@ img {
     height: auto;
     max-width: 200px;
 }
+
+.header-card {
+    width: 100%;
+    border-radius: 0px;
+}
+
+.link-card-content {
+    padding: 0px 0px 0px 25px !important;
+}
+
+.title-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}

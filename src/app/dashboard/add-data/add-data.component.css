@@ -12,3 +12,9 @@
 .container-fluid, .col-md-10 {
     padding: 0;
 }
+
+@media (max-width: 768px) {
+    .form-card {
+        width: 100%;
+    }
+  }
