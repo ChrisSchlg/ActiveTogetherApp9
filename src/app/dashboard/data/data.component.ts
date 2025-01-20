@@ -12,7 +12,7 @@ import { BackendService } from '../../shared/backend.service';
 })
 export class DataComponent {
 
-  constructor(public storeService: StoreService, private backendService: BackendService) {}
+  constructor(public storeService: StoreService, private backendService: BackendService) { }
 
   public page: number = 0;
 
@@ -26,8 +26,8 @@ export class DataComponent {
     var pagesCount = Math.ceil(this.storeService.registrationTotalCount / 2);
     let res = [];
     for (let i = 0; i < pagesCount; i++) {
-        res.push(i + 1);
-      }
+      res.push(i + 1);
+    }
     return res;
   }
 

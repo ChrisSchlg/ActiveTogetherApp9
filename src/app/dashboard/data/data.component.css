@@ -1,22 +1,22 @@
 button.active {
-    background-color: orange;
+  background-color: orange;
 }
 
 .header {
-    font-weight: bold;
-    border-top: 1px solid darkgray;
+  font-weight: bold;
+  border-top: 1px solid darkgray;
 }
 
 .content-row {
-    height: 75px;
-    border-left: 1px solid darkgray;
-    border-right: 1px solid darkgray;
-    border-bottom: 1px solid darkgray;
-    background-color: lightgray;
+  height: 75px;
+  border-left: 1px solid darkgray;
+  border-right: 1px solid darkgray;
+  border-bottom: 1px solid darkgray;
+  background-color: lightgray;
 }
 
 .content-col {
-    flex-direction: column;
+  flex-direction: column;
 }
 
 .col-md-10 {

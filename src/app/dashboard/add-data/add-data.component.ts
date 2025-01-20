@@ -54,7 +54,7 @@ export class AddDataComponent implements OnInit {
   }
 
   onSubmit() {
-    if(this.registrationForm.valid) {
+    if (this.registrationForm.valid) {
       this.backendService.addRegistration(this.registrationForm.value, this.storeService.currentPage);
     }
   }

@@ -17,7 +17,8 @@
         <div class="col content-col d-flex justify-content-center">{{course.instructor}}</div>
         <div class="col-3 content-col d-flex justify-content-center">
           <div class="row" *ngFor="let date of course.dates">
-            <div class="col"><span>{{date.begin | date:"MMM dd, yyyy 'um' hh:mm a" }}</span> - <span>{{date.end | date:"MMM dd, yyyy 'um' hh:mm a"}}</span></div>
+            <div class="col"><span>{{date.begin | date:"MMM dd, yyyy 'um' hh:mm a" }}</span> - <span>{{date.end |
+                date:"MMM dd, yyyy 'um' hh:mm a"}}</span></div>
           </div>
         </div>
       </div>
@@ -43,4 +44,5 @@
   </div>
 </div>
 
-<button [ngClass]="page == storeService.currentPage ? 'active' : ''" (click)="selectPage(page)" type="button" *ngFor="let page of returnAllPages()">{{page}}</button>
+<button [ngClass]="page == storeService.currentPage ? 'active' : ''" (click)="selectPage(page)" type="button"
+  *ngFor="let page of returnAllPages()">{{page}}</button>
