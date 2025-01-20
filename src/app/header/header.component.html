@@ -6,8 +6,8 @@
 <br />
 <mat-card appearance="outlined" class="header-card">
     <mat-card-content class="link-card-content">
-        <img mat-card-image src={{imagePath}}>&nbsp;&nbsp;
-        <a [routerLink]="['/dashboard']">Dashboard</a>&nbsp;&nbsp;
-        <a [routerLink]="['/about']">About</a>
+        <img mat-card-image src={{imagePath}}>
+        <a mat-flat-button class="link-button" [routerLink]="['/dashboard']">Dashboard</a>
+        <a mat-flat-button class="link-button" [routerLink]="['/about']">About</a>
     </mat-card-content>
 </mat-card>
