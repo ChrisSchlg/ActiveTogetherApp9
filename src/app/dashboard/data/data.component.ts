@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { SharedModule } from '../../shared/shared.module';
 import { StoreService } from '../../shared/store.service';
 import { BackendService } from '../../shared/backend.service';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 
 @Component({
   selector: 'app-data',
   standalone: true,
-  imports: [SharedModule],
+  imports: [SharedModule, MatButtonToggleModule],
   templateUrl: './data.component.html',
   styleUrl: './data.component.css'
 })

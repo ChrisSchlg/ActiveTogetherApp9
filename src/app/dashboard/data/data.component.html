@@ -13,7 +13,8 @@
         <div class="col content-col d-flex justify-content-center">{{course.name}}</div>
         <div class="col content-col d-flex justify-content-center">{{course.eventLocation.name}}</div>
         <div class="col content-col d-flex justify-content-center">{{course.eventLocation.address}}</div>
-        <div class="col content-col d-flex justify-content-center">{{course.eventLocation.venueByPublicTansport == true ? "Ja" : "Nein"}}</div>
+        <div class="col content-col d-flex justify-content-center">{{course.eventLocation.venueByPublicTansport == true
+          ? "Ja" : "Nein"}}</div>
         <div class="col content-col d-flex justify-content-center">{{course.instructor}}</div>
         <div class="col-3 content-col d-flex justify-content-center">
           <div class="row" *ngFor="let date of course.dates">
@@ -43,6 +44,15 @@
     </div>
   </div>
 </div>
+<br>
 
-<button [ngClass]="page == storeService.currentPage ? 'active' : ''" (click)="selectPage(page)" type="button"
-  *ngFor="let page of returnAllPages()">{{page}}</button>
+<div class="container-fluid text-center">
+  <div class="row">
+    <div class="col-12">
+      <mat-button-toggle-group name="page-selector" aria-label="Page Selector">
+        <mat-button-toggle *ngFor="let page of returnAllPages()" value="{{page}}">{{page}}</mat-button-toggle>
+      </mat-button-toggle-group>
+    </div>
+  </div>
+</div>
+<br>
