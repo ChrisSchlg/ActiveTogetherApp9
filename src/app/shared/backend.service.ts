@@ -39,4 +39,9 @@ export class BackendService {
       this.getRegistrations(page);
     })
   }
+
+  public deleteRegistration(registrationId: any) {
+    console.log("x");
+    this.http.delete('http://localhost:5000/registrations$' + registrationId);
+  }
 }

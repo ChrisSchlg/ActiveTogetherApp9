@@ -35,11 +35,13 @@
         <div class="col content-col d-flex justify-content-center">Name</div>
         <div class="col content-col d-flex justify-content-center">Geburtsdatum</div>
         <div class="col content-col d-flex justify-content-center">Kurs</div>
+        <div class="col content-col d-flex justify-content-center">Stornieren</div>
       </div>
       <div class="row content-row" *ngFor="let registration of storeService.registrations">
         <div class="col content-col d-flex justify-content-center">{{registration.name}}</div>
         <div class="col content-col d-flex justify-content-center">{{registration.birthdate}}</div>
         <div class="col content-col d-flex justify-content-center">{{registration.course.name}}</div>
+        <div class="col content-col d-flex justify-content-center"><button mat-flat-button class="standard-button" (click)="cancleCourse(registration.id)">Kurs Stornieren</button></div>
       </div>
     </div>
   </div>

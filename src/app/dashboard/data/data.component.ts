@@ -3,11 +3,12 @@ import { SharedModule } from '../../shared/shared.module';
 import { StoreService } from '../../shared/store.service';
 import { BackendService } from '../../shared/backend.service';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-data',
   standalone: true,
-  imports: [SharedModule, MatButtonToggleModule],
+  imports: [SharedModule, MatButtonToggleModule, MatButtonModule],
   templateUrl: './data.component.html',
   styleUrl: './data.component.css'
 })
@@ -32,4 +33,9 @@ export class DataComponent {
     return res;
   }
 
+
+  public cancleCourse(registrationId: any) {
+    console.log("x");
+    this.backendService.deleteRegistration(registrationId);
+  }
 }
